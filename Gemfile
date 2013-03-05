@@ -24,6 +24,8 @@ gem 'jquery-rails'
 
 gem 'devise' 
 
+gem 'bootstrap-sass'
+
 group :test do
     gem 'rspec-rails', '2.12'
     gem 'cucumber-rails', :require => false

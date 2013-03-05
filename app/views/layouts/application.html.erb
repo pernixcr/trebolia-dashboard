@@ -1,14 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>TreboliaDashboard</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
-</html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Trebolia Dashboard" %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+  <div class="row">
+    <header class="navbar navbar-fixed-top span12" style=" margin: 0px auto;" >
+      <nav class="navbar-inner">
+        <div class="container" style= " overflow: hidden; " >
+          <%= render 'layouts/navigation' %>
+        </div>
+      </av>
+    </header>
+    </div>
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+            <div class="row wrapper">
+              <div class="span2"></div>
+             <div class="span6">
+               <%= render 'layouts/messages' %>
+               <%= yield %>
+             </div>
+              <div class="span2"></div>
+           </div> 
+          <div class="push"></div>
+        </div>
+         <div class="footer-wrapper">
+           <footer style= "text-align: center;">  Pernix Solutions - 2013 </footer>
+         </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->  
+ </body>
+  </html>
