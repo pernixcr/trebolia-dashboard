@@ -25,6 +25,8 @@ gem 'jquery-rails'
 gem 'devise' 
 
 gem 'bootstrap-sass'
+gem 'mysql2'
+gem 'rmre'
 
 group :test do
     gem 'rspec-rails', '2.12'

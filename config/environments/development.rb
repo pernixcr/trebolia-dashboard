@@ -49,7 +49,7 @@ TreboliaDashboard::Application.configure do
       :tsl => true,
       :authentication => :plain,
       :domain => 'gmail.com',
-      :user_name => 'jehehe1@gmail.com',
-      :password => 'Rinosopardo0190',
+      :user_name => 'something@gmail.comm',
+      :password => 'password',
   }
 end

@@ -13,6 +13,17 @@
 
 ActiveRecord::Schema.define(:version => 20130305145439) do
 
+  create_table "Registro_Facturas", :primary_key => "Id_Facturas", :force => true do |t|
+    t.string   "Area",                    :limit => 45
+    t.string   "DetalleFactura",          :limit => 45
+    t.datetime "FechaCreacionFactura"
+    t.datetime "FechaVencimientoFactura"
+    t.datetime "FechaCancelacionFactura"
+    t.integer  "FacturaCobrada",          :limit => 1
+    t.integer  "DudosoCobro",             :limit => 1
+    t.integer  "MontoFactura",            :limit => 8
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
