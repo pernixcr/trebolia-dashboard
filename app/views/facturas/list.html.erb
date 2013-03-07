@@ -1,0 +1,58 @@
+<h1> Dashboard </h1>
+
+<div>
+<h4> Facturado. </h2>
+<% if @facturas.blank? %>
+  <p> No hay facturas registradas. </p>
+<%else%>
+  <table class="table table-condensed">
+    <tr>
+      <th> Invoice detail</th>
+      <th> Amount</th>
+    <tr>
+  <%@facturas.each do |f|%>
+    <tr>
+      <td> <%=  f.DetalleFactura%> </td>
+      <td> <%=  f.MontoFactura%> </td>
+    </tr>
+  <%end%>
+  </table>
+<%end%>
+</div>
+<div>
+  <h4> Por Cobrar Vencido.</h4>
+<% if @dudoso.blank? %>
+  <p> No hay facturas registradas. </p>
+<%else%>
+  <table class="table table-condensed">
+    <tr>
+      <th> Invoice detail</th>
+      <th> Amount</th>
+    <tr>
+  <%@dudoso.each do |f|%>
+    <tr>
+      <td> <%=  f.DetalleFactura%> </td>
+      <td> <%=  f.MontoFactura%> </td>
+    </tr>
+  <%end%>
+  </table>
+<%end%>
+</div> 
+<h4> Por Cobrar No Vencido</h4>
+<% if @no_vencido.blank? %>
+  <p> No hay facturas registradas. </p>
+<%else%>
+  <table class="table table-condensed">
+    <tr>
+      <th> Invoice detail</th>
+      <th> Amount</th>
+    <tr>
+  <%@no_vencido.each do |f|%>
+    <tr>
+      <td> <%=  f.DetalleFactura%> </td>
+      <td> <%=  f.MontoFactura%> </td>
+    </tr>
+  <%end%>
+  </table>
+<%end%>
+</div>

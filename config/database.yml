@@ -6,7 +6,9 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: Contaplus_DataAnalisys 
+  database: Contaplus_DataAnalisys
+  username: root
+  password: root
   pool: 5
   timeout: 5000
 

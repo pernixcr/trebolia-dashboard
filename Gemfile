@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'devise' 
+gem 'devise'
 
 gem 'bootstrap-sass'
 gem 'mysql2'
