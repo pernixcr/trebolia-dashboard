@@ -1,24 +1,23 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Trebolia Dashboard" %></title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-    <%= yield(:head) %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Trebolia Dashboard" %></title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %>
   </head>
   <body>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
   <div class="row">
     <header class="navbar navbar-fixed-top span12" style=" margin: 0px auto;" >
       <nav class="navbar-inner">
         <div class="container" style= " overflow: hidden; " >
           <%= render 'layouts/navigation' %>
         </div>
-      </av>
+      </nav>
     </header>
     </div>
     <div id="main" role="main">
@@ -28,7 +27,8 @@
                <div class="span6">
                 <%= render 'layouts/messages' %>
                 <%= yield %>
-               <div class="span6">
+               <div id="chart" class="span6" style="min-width: 400px; height: 400px; margin: 0 auto">
+                    
                </div>
             </div>
           <div class="push"></div>

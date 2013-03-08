@@ -1,7 +1,13 @@
 class FacturasController < ApplicationController
   def list
-    @facturas = RegistroFactura.where(:FacturaCobrada => true)
-    @dudoso = RegistroFactura.where( "FacturaCobrada = :cobrada AND FechaVencimientoFactura < :today", {cobrada: false, today: (Date.today)})
-    @no_vencido = RegistroFactura.where( "FacturaCobrada = :cobrada AND FechaVencimientoFactura >= :today", {cobrada: false, today: (Date.today)})
+    @facturas = Factura.where(:cobrada => true)
+    @dudoso = Factura.where( "cobrada = :cobrada AND fecha_vencimiento < :today", {cobrada: false, today: (Date.today)})
+    @no_vencido = Factura.where( "cobrada  = :cobrada AND fecha_vencimiento >= :today", {cobrada: false, today: (Date.today)})
   end
+
+  def serie_facturado_mensual
+    for month in 1 ... 12
+    end
+  end
+
 end
