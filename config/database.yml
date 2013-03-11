@@ -8,7 +8,7 @@ development:
   encoding: utf8
   database: Contaplus_DataAnalisys
   username: root
-  password: root
+   # Password: root
   pool: 5
   timeout: 5000
 

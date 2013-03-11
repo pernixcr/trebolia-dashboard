@@ -26,8 +26,6 @@ gem 'devise'
 
 gem 'bootstrap-sass'
 gem 'mysql2'
-gem 'rmre'
-gem "highcharts-rails", "~> 2.3.0"
 
 group :test do
     gem 'rspec-rails', '2.12'

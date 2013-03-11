@@ -7,8 +7,8 @@
 <%else%>
   <table class="table table-condensed">
     <tr>
-      <th> Invoice detail</th>
-      <th> Amount</th>
+      <th> Detalle factura</th>
+      <th> Monto </th>
     <tr>
   <%@facturas.each do |f|%>
     <tr>
@@ -26,8 +26,8 @@
 <%else%>
   <table class="table table-condensed">
     <tr>
-      <th> Invoice detail</th>
-      <th> Amount</th>
+      <th> Detalle factura</th>
+      <th> Monto </th>
     <tr>
   <%@dudoso.each do |f|%>
     <tr>
@@ -37,15 +37,15 @@
   <%end%>
   </table>
 <%end%>
-</div> 
+</div>
 <h4> Por Cobrar No Vencido</h4>
 <% if @no_vencido.blank? %>
   <p> No hay facturas registradas. </p>
 <%else%>
   <table class="table table-condensed">
     <tr>
-      <th> Invoice detail</th>
-      <th> Amount</th>
+      <th> Detalle factura</th>
+      <th> Monto </th>
     <tr>
   <%@no_vencido.each do |f|%>
     <tr>
@@ -57,8 +57,8 @@
 <%end%>
 </div> 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script type="text/javascript">
-$(function () {
+<script type="text/javascript">
+ $(function () {
   var chart;
   $(document).ready(function() {
     chart = new Highcharts.Chart({
@@ -105,11 +105,10 @@ $(function () {
         data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8]
       }, {
         name: 'Cobrado',
-        data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-      }] 
+        data: @cobrado_mensualmente 
+      }]
     });
   });
-
 });
 </script>
 
