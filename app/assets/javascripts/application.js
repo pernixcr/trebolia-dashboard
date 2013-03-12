@@ -15,4 +15,6 @@
 //= require bootstrap
 //= require highcharts
 //= require highcharts-more
+//= require underscore
+//= require currency_formatter
 //= require_tree .

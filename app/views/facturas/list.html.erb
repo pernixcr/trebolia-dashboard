@@ -1,7 +1,4 @@
-<h1> Dashboard </h1>
-
-<div>
-<h4> Facturado. </h2>
+<h4> Facturado </h2>
 <% if @facturas.blank? %>
   <p> No hay facturas registradas. </p>
 <%else%>
@@ -13,16 +10,16 @@
   <%@facturas.each do |f|%>
     <tr>
       <td> <%=  f.detalle%> </td>
-      <td> <%=  f.monto%> </td>
+      <td class="monto" > <%=  f.monto%> </td>
     </tr>
   <%end%>
   </table>
 <%end%>
 </div>
 <div>
-  <h4> Por Cobrar Vencido.</h4>
+  <h4> Por Cobrar Vencido</h4>
 <% if @dudoso.blank? %>
-  <p> No hay facturas registradas. </p>
+  <p> No hay facturas registradas </p>
 <%else%>
   <table class="table table-condensed">
     <tr>
@@ -32,7 +29,7 @@
   <%@dudoso.each do |f|%>
     <tr>
       <td> <%=  f.detalle%> </td>
-      <td> <%=  f.monto%> </td>
+      <td class="monto" > <%= f.monto %> </td>
     </tr>
   <%end%>
   </table>
@@ -50,7 +47,7 @@
   <%@no_vencido.each do |f|%>
     <tr>
       <td> <%=  f.detalle%> </td>
-      <td> <%=  f.monto%> </td>
+      <td class="monto" > <%=  f.monto%> </td>
     </tr>
   <%end%>
   </table>
@@ -70,7 +67,7 @@
       },
       title: {
         text: 'Facturacion Promedio Mensual',
-        x: -20 //center
+        x: -20
       },
       xAxis: {
         categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun',
@@ -89,7 +86,7 @@
       tooltip: {
         formatter: function() {
           return '<b>'+ this.series.name +'</b><br/>'+
-            this.x +': '+ this.y +'°C';
+            this.y +' euros';
         }
       },
       legend: {
@@ -102,10 +99,10 @@
       },
       series: [{
         name: 'Facturado',
-        data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8]
+        data: <%= @total_facturado %>
       }, {
         name: 'Cobrado',
-        data: @cobrado_mensualmente 
+        data: <%= @cobrado_mensualmente %>
       }]
     });
   });
