@@ -4,7 +4,6 @@ body { padding-top: 60px; }
 
 .content {
       padding: 20px;
-    background-color: #EF9D37;
       -webkit-border-radius: 0 0 6px 6px;
        -moz-border-radius: 0 0 6px 6px;
        border-radius: 0 0 6px 6px;
@@ -43,6 +42,9 @@ html, body, .container, .content {
 .footer-wrapper {
     position: relative;
     height: 50px;
+}
+#year_select{
+  margin-bottom: 0px;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
