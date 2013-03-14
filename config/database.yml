@@ -4,11 +4,6 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-#  adapter: mysql2
-#  encoding: utf8
-#  database: Contaplus_DataAnalisys
-#  username: root
-#  password: root
   adapter: sqlite3
   database: db/trebolia.sqlite3
   pool: 5
@@ -26,7 +21,6 @@ test: &test
 production:
   adapter: postgresql
   database: app-dev
-  username: user
 
 cucumber:
   <<: *test
