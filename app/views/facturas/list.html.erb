@@ -14,17 +14,19 @@
     <div class="span6">
       <div>
         <h4> Facturado </h2>
-        <% if @facturas.blank? %>
+        <% if @facturas_anuales.blank? %>
           <p> No hay facturas registradas. </p>
       <%else%>
           <table class="table table-condensed">
           <tr>
             <th> Detalle factura</th>
+            <th>Fecha facturacion</th>
             <th> Monto </th>
           </tr>
-          <%@facturas.each do |f|%>
+          <%@facturas_anuales.each do |f|%>
             <tr>
             <td> <%=  f.detalle%> </td>
+            <td> <%=  f.created_at.strftime("%d/%m/%Y")%> </td>
             <td class="monto" > <%=  f.monto%> </td>
           </tr>
         <%end%>
@@ -39,11 +41,13 @@
           <table class="table table-condensed">
           <tr>
             <th> Detalle factura</th>
+            <th>Fecha facturacion</th>
             <th> Monto </th>
           </tr>
           <%@dudoso.each do |f|%>
             <tr>
             <td> <%=  f.detalle%> </td>
+            <td> <%=  f.created_at.strftime("%d/%m/%Y")%> </td>
             <td class="monto" > <%= f.monto %> </td>
           </tr>
         <%end%>
@@ -58,11 +62,13 @@
           <table class="table table-condensed">
           <tr>
             <th> Detalle factura</th>
+            <th>Fecha facturacion</th>
             <th> Monto </th>
           </tr>
           <%@no_vencido.each do |f|%>
             <tr>
             <td> <%=  f.detalle%> </td>
+            <td> <%=  f.created_at.strftime("%d/%m/%Y")%> </td>
             <td class="monto" > <%=  f.monto%> </td>
           </tr>
         <%end%>
@@ -70,7 +76,7 @@
       <%end%>
       </div>
     </div>
-    <div class="span6">
+    <div class="span6 graph">
       <div id="chart" class="span6" style="min-width: 570px; height: 400px; margin: 0 auto"></div>
     </div>
   </div>
